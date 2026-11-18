@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrinos IDE</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Carrinos <span>IDE</span></div>
+    <div class="board">
+      <label for="board">Placa</label>
+      <select id="board">
+        <option value="uno">Arduino Uno</option>
+        <option value="mega">Arduino Mega 2560</option>
+        <option value="nano">Arduino Nano</option>
+        <option value="nano-old">Arduino Nano (bootloader antigo)</option>
+      </select>
+    </div>
+    <button id="btn-connect" class="btn">Conectar placa</button>
+    <span id="board-status" class="status off">Nenhuma placa</span>
+    <div class="spacer"></div>
+    <button id="btn-open" class="btn ghost">Abrir</button>
+    <button id="btn-save" class="btn ghost">Salvar</button>
+    <button id="btn-upload" class="btn primary">Enviar para a placa</button>
+  </header>
+
+  <main class="layout">
+    <section class="pane blocks-pane">
+      <div class="pane-title">Blocos</div>
+      <div id="blockly"></div>
+      <div id="detached" class="detached hidden">
+        <p>Você editou o código à mão, então os blocos estão pausados.</p>
+        <button id="btn-reattach" class="btn">Voltar a usar os blocos</button>
+      </div>
+    </section>
+    <section class="pane code-pane">
+      <div class="pane-title">Código <small>C++ do Arduino</small></div>
+      <div id="monaco"></div>
+      <div class="pane-title">Monitor serial
+        <select id="baud"><option>9600</option><option>115200</option></select>
+        <button id="btn-monitor" class="btn small">Abrir monitor</button>
+        <button id="btn-clear" class="btn small ghost">Limpar</button>
+      </div>
+      <pre id="console"></pre>
+    </section>
+  </main>
+
+  <input id="file-open" type="file" accept=".json,.ino,.hex" hidden />
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

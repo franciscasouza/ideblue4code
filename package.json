@@ -1,0 +1,21 @@
+{
+  "name": "carrinos-ide",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blockly": "^11.2.1",
+    "monaco-editor": "^0.52.2"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  },
+  "type": "module",
+  "private": true
+}
